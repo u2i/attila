@@ -39,13 +39,13 @@
 
 	<div class="nav-header">
 		<nav class="nav-wrapper" aria-label="{{t "Main"}}">
+				{{navigation}}
+				{{> "navigation-meta"}}
 				{{#if @site.logo}}
 				<span class="logo">
 					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
 				</span>
 				{{/if}}
-				{{navigation}}
-				{{> "navigation-meta"}}
 		</nav>
 
 		<div class="nav-wrapper-control">
@@ -87,7 +87,7 @@
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
+				<span class="nav-copy">RetroTool &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{/if}}

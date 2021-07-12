@@ -14,8 +14,8 @@ $inner: calc(64rem + 8vw);
    Basics
    ========================================================================== */
 :root {
-	--font-primary: 'Fira Sans', sans-serif;
-	--font-secondary: 'Libre Baskerville', serif;
+	--font-primary: 'Uxum Grotesque', Arial, sans-serif;
+	--font-secondary: 'Clearface ITC Pro', Georgia, serif;
 }
 
 html {
@@ -80,25 +80,39 @@ textarea {
 	h1 {
 		font-size: 4rem;
 		text-indent: -1px;
+		font-family: var(--font-secondary);
+		font-weight: bold;
+		letter-spacing: -3px;
 	}
 
 	h2 {
 		font-size: 3rem;
 		text-indent: -1px;
+		font-family: var(--font-secondary);
+		font-weight: bold;
+		letter-spacing: -3px;
 	}
 
 	h3 {
 		font-size: 2.4rem;
+		font-family: var(--font-secondary);
+		font-weight: bold;
+		letter-spacing: -1px;
 	}
 
 	h4 {
 		font-size: 2rem;
+		font-family: var(--font-secondary);
+		font-weight: bold;
+		letter-spacing: -1px;
 	}
 
 	h5,
 	h6 {
-		font-size: 2rem;
-		font-weight: 500;
+		font-size: 1.75rem;
+		font-family: var(--font-secondary);
+		font-weight: bold;
+		letter-spacing: 0;
 	}
 
 	h1 a,
@@ -111,13 +125,13 @@ textarea {
 	}
 
 	p {
-		font-family: var(--font-secondary);
+		font-family: var(--font-primary);
 		margin: 0 0 4rem;
 	}
 
 	ol,
 	ul {
-		font-family: var(--font-secondary);
+		font-family: var(--font-primary);
 		margin: 0 0 4rem;
 		padding-left: 2em;
 		box-sizing: border-box;
@@ -177,7 +191,7 @@ textarea {
 	}
 
 	blockquote {
-		font-family: var(--font-secondary);
+		font-family: var(--font-primary);
 		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
@@ -217,7 +231,7 @@ textarea {
 	}
 
 	dl {
-		font-family: var(--font-secondary);
+		font-family: var(--font-primary);
 		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
@@ -805,7 +819,8 @@ textarea {
    ========================================================================== */
 .blog-header {
 	position: relative;
-	padding-top: calc(16rem + 4vw);
+	padding-top: calc(12rem + 4vw);
+	background-color: var(--color-background-brand);
 
 	&.has-cover {
 		padding-top: calc(24rem + 8vw);
@@ -872,11 +887,13 @@ textarea {
 	display: block;
 	margin: 0;
 	padding: 0;
-	font-weight: 700;
+	font-family: var(--font-secondary);
+	font-weight: bold;
 	font-size: 6em;
 	line-height: 1em;
 	text-decoration: none;
 	color: var(--color-content-lead);
+	letter-spacing: -3px;
 }
 
 .has-cover .blog-name {
@@ -884,7 +901,7 @@ textarea {
 }
 
 .blog-description {
-	font-family: var(--font-secondary);
+	font-family: var(--font-primary);
 	display: block;
 	margin-top: 1rem;
 	padding: 0;
@@ -938,6 +955,9 @@ textarea {
 		line-height: 1em;
 		margin: 1rem 0;
 		color: var(--color-content-lead);
+		font-family: var(--font-secondary);
+		font-weight: bold;
+		letter-spacing: -3px;
 	}
 
 	.archive-description {
@@ -945,8 +965,9 @@ textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		margin: 1rem 0;
-		font-family: var(--font-secondary);
+		font-family: var(--font-primary);
 		color: var(--color-content-secondary);
+		letter-spacing: -1px;
 	}
 
 	.archive-links {
@@ -1252,7 +1273,7 @@ textarea {
 
 			.search-result-row-excerpt {
 				margin: 0.5rem 0 0;
-				font-family: var(--font-secondary);
+				font-family: var(--font-primary);
 				font-size: 1.25em;
 				line-height: 2em;
 				display: -webkit-box;
@@ -1291,7 +1312,6 @@ textarea {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
 	z-index: 400;
 	transition: all ease-out 0.3s;
 	@media only screen and (max-width: $breakpoint-medium) {
@@ -1406,7 +1426,7 @@ textarea {
 }
 
 .nav-header .logo {
-	margin-right: 3rem;
+	margin-left: 3rem;
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: none;
 	}
@@ -1419,7 +1439,8 @@ textarea {
 		img {
 			display: block;
 			width: auto;
-			height: 4rem;
+			height: 2.4rem;
+			padding: 0.5rem 0 1.1rem;
 		}
 	}
 }
@@ -1696,9 +1717,8 @@ textarea {
 .nav-footer {
 	position: relative;
 	z-index: 20;
-	padding-top: calc(12rem + 8vw);
-	padding-bottom: 4rem;
 	margin-top: auto;
+	padding: calc(12rem + 8vw) calc(50% - 583px) 4rem;
 
 	.inner {
 		max-width: none;
@@ -1798,6 +1818,7 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: var(--color-content-secondary);
+	display: none;
 
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-right: auto;
@@ -1866,6 +1887,21 @@ textarea {
 
 .theme-text {}
 
+
+.nav-header, .nav-footer {
+	width: 100%;
+
+	@media screen and (min-width: 1024px) {
+		padding: 0 calc(50% - 452px);
+		width: 904px;
+	}
+
+	@media screen and (min-width: 1366px) {
+		padding: 0 calc(50% - 583px);
+		width: 1166px;
+	}
+}
+
 /* ==========================================================================
    Index
    ========================================================================== */
@@ -1902,12 +1938,13 @@ textarea {
    ========================================================================== */
 .post-header {
 	position: relative;
-	padding: calc(16rem + 4vw) 0 calc(2rem + 2vw);
+	padding: calc(12rem + 3vw) 0 calc(2rem + 1vw);
+	margin-bottom: calc(4rem + 2vw);
+	background-color: var(--color-background-brand);
 }
 
 .post-header.has-cover {
 	padding: calc(16rem + 8vw) 0 calc(4rem + 6vw);
-	margin-bottom: calc(4rem + 2vw);
 	background: black;
 	overflow: hidden;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -2002,9 +2039,11 @@ textarea {
 	margin: 0 0 2rem;
 	font-size: 4em;
 	line-height: 1.25em;
-	font-weight: 700;
 	text-indent: -1px;
 	color: var(--color-content-lead);
+	font-family: var(--font-secondary);
+	font-weight: bold;
+	letter-spacing: -3px;
 
 	@media only screen and (max-width: $breakpoint-small) {
 		-webkit-hyphens: auto;
@@ -2122,7 +2161,7 @@ textarea {
 
 .post-excerpt {
 	margin: 1em 0 0;
-	font-family: var(--font-secondary);
+	font-family: var(--font-primary);
 	font-size: 1.75em;
 	line-height: 2em;
 }
@@ -2469,7 +2508,7 @@ textarea {
 .post-nav-excerpt {
 	height: 5rem;
 	margin: 0 0 1rem;
-	font-family: var(--font-secondary);
+	font-family: var(--font-primary);
 	font-size: 1.5em;
 	line-height: 2.5rem;
 	display: -webkit-box;
