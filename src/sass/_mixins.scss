@@ -1,0 +1,398 @@
+$clearface: 'Clearface ITC Pro', Georgia, serif;
+$uxum: 'Uxum Grotesque', Arial, sans-serif;
+
+$family: (
+  'H1': $clearface,
+  'H2': $clearface,
+  'H3': $clearface,
+  'H4': $clearface,
+  'H5': $clearface,
+  'H6': $clearface,
+  'H7': $clearface,
+  'H8': $uxum,
+  'H9': $uxum,
+  'H10': $uxum,
+  'H11': $uxum,
+  'H12': $uxum,
+);
+$sizes: (
+  360: (
+    'H1': (
+      size: 3.25em,
+      line-height: 1em,
+      spacing: -0.057692308em,
+    ),
+    'H2': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H3': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H4': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H5': (
+      size: 1.75em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H6': (
+      size: 1.5em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H7': (
+      size: 1.25em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H8': (
+      size: 1.25em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H9': (
+      size: 1.125em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H10': (
+      size: 1em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H11': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H12': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+  ),
+  768: (
+    'H1': (
+      size: 3.25em,
+      line-height: 1em,
+      spacing: -0.057692308em,
+    ),
+    'H2': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H3': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H4': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H5': (
+      size: 1.75em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H6': (
+      size: 1.5em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H7': (
+      size: 0.875em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H8': (
+      size: 1.125em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H9': (
+      size: 1em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H10': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H11': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H12': (
+      size: 0.75em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+  ),
+  1024: (
+    'H1': (
+      size: 3.625em,
+      line-height: 1em,
+      spacing: -0.051724138em,
+    ),
+    'H2': (
+      size: 2.25em,
+      line-height: 1em,
+      spacing: -0.027777778em,
+    ),
+    'H3': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H4': (
+      size: 1.75em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H5': (
+      size: 1.5em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H6': (
+      size: 1.25em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H7': (
+      size: 0.875em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H8': (
+      size: 1.25em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H9': (
+      size: 1.125em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H10': (
+      size: 1em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H11': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H12': (
+      size: 0.75em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+  ),
+  1366: (
+    'H1': (
+      size: 4.25em,
+      line-height: 1em,
+      spacing: -0.044117647em,
+    ),
+    'H2': (
+      size: 2.625em,
+      line-height: 1em,
+      spacing: -0.047619048em,
+    ),
+    'H3': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H4': (
+      size: 1.75em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H5': (
+      size: 1.5em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H6': (
+      size: 1.25em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H7': (
+      size: 0.875em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H8': (
+      size: 1.25em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H9': (
+      size: 1.125em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H10': (
+      size: 1em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H11': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H12': (
+      size: 0.75em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+  ),
+  1920: (
+    'H1': (
+      size: 4.25em,
+      line-height: 1em,
+      spacing: -0.044117647em,
+    ),
+    'H2': (
+      size: 2.625em,
+      line-height: 1em,
+      spacing: -0.047619048em,
+    ),
+    'H3': (
+      size: 2.25em,
+      line-height: 1em,
+      spacing: -0.027777778em,
+    ),
+    'H4': (
+      size: 2em,
+      line-height: 1em,
+      spacing: -0.03125em,
+    ),
+    'H5': (
+      size: 1.75em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H6': (
+      size: 1.5em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H7': (
+      size: 0.875em,
+      line-height: 1em,
+      spacing: normal,
+    ),
+    'H8': (
+      size: 1.5em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H9': (
+      size: 1.25em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H10': (
+      size: 1.125em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H11': (
+      size: 0.875em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+    'H12': (
+      size: 0.75em,
+      line-height: 1.35em,
+      spacing: normal,
+    ),
+  ),
+);
+
+@mixin font-family($type) {
+  font-family: map-get($family, $type);
+  font-weight: normal;
+}
+
+@mixin font-sizing($type, $screen) {
+  $font: map-get(map-get($sizes, $screen), $type);
+
+  font-size: map-get($font, size);
+  line-height: map-get($font, line-height);
+  letter-spacing: map-get($font, spacing);
+}
+
+@mixin font($type, $line-height: '', $letter-spacing: '') {
+  @include font-family($type);
+  @include font-sizing($type, 360);
+
+  @if $line-height != '' {
+    line-height: $line-height;
+  }
+  @if $letter-spacing != '' {
+    letter-spacing: $letter-spacing;
+  }
+
+  @media screen and (min-width: 768px) {
+    @include font-sizing($type, 768);
+
+    @if $line-height != '' {
+      line-height: $line-height;
+    }
+    @if $letter-spacing != '' {
+      letter-spacing: $letter-spacing;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    @include font-sizing($type, 1024);
+
+    @if $line-height != '' {
+      line-height: $line-height;
+    }
+    @if $letter-spacing != '' {
+      letter-spacing: $letter-spacing;
+    }
+  }
+
+  @media screen and (min-width: 1366px) {
+    @include font-sizing($type, 1366);
+
+    @if $line-height != '' {
+      line-height: $line-height;
+    }
+    @if $letter-spacing != '' {
+      letter-spacing: $letter-spacing;
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    @include font-sizing($type, 1920);
+
+    @if $line-height != '' {
+      line-height: $line-height;
+    }
+    @if $letter-spacing != '' {
+      letter-spacing: $letter-spacing;
+    }
+  }
+}

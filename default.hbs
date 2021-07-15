@@ -49,10 +49,18 @@
 		</nav>
 
 		<div class="nav-wrapper-control">
-			<div class="inner">
-				<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
-				<a class="nav-search" style="display: none;" title="{{t "Search"}}" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
-			</div>
+			<a class="nav-menu" role="button">
+				<svg class="icon" viewBox="0 0 28 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="{{t "Menu"}}">
+					<line x1="28" y1="9.5" x2="-1.31134e-07" y2="9.5" stroke="currentColor" stroke-width="3"></line>
+					<line x1="28" y1="1.5" x2="-1.31134e-07" y2="1.5" stroke="currentColor" stroke-width="3"></line>
+					<line x1="28" y1="17.5" x2="-1.31134e-07" y2="17.5" stroke="currentColor" stroke-width="3"></line>
+				</svg>
+			</a>
+			{{#if @site.logo}}
+			<span class="logo">
+				<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
+			</span>
+			{{/if}}
 		</div>
 	</div>
 	<div class="nav-close" role="button" aria-label="{{t "Close"}}"></div>
@@ -87,11 +95,28 @@
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-				<span class="nav-copy">RetroTool &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
 				{{#if @site.secondary_navigation}}
+				<h5>Explore</h5>
 				{{navigation type="secondary"}}
 				{{/if}}
-				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> &bull; <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
+				<ul>
+					<li>
+						<a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank">RSS <i class="icon icon-rss" aria-hidden="true"></i></a>
+					</li>
+				</ul>
+				<span class="nav-copy">
+					{{#if @site.logo}}
+						<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
+					{{else}}
+						RetroTool &copy; {{date format='YYYY'}}
+					{{/if}}
+				</span>
+				<span class="nav-credits">
+					<a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+						<span class="theme-icon"></span>
+						<span class="theme-text">System theme</span> 
+					</a> 
+				</span>
 			</nav>
 		</div>
 
