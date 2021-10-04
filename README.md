@@ -1,20 +1,11 @@
-# Attila
+# RetroTool Blog theme
 
-A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). See a demo at: [attila.peteramende.de](https://attila.peteramende.de/)
-
-## ♥️ Support
-
-Maintaining this project takes a lot of time. You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila. Cheers 🍻
-
-## 📷 Screenshot
-
-<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.png" />
+This theme is based on [Attila](https://github.com/zutrinken/attila) by Peter Amende. 
+Changed to work well for RetroTool blog needs [blog.retrotool.io](https://blog.retrotool.io)
 
 ## ⭐️ Features
 
 * Responsive layout
-* Dark Mode & Theme Switch
-* Search & Popular Tags
 * Post reading progress
 * Code highlight including line numbers
 * Disqus support
@@ -53,38 +44,6 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 | `ga` | | Galego | 🟩 | [r1p](https://github.com/r1p) |
 | `uk` | 🇺🇦 | Ukrainian | 🟩 | [Rakanskiy](https://github.com/rakanskiy) |
 
-## Show subscribe / account button in navigation
-
-1. Go to `partials/navigation-meta.hbs`.
-2. Remove comments on line `24`and `34`.
-
-## 🔠 Setup custom google fonts
-
-1. Go to [fonts.google.com](https://fonts.google.com/) and choose a font.
-2. Choose __Embed__ and copy the `<link>` code.
-3. Go to __Code injection__.  
-4. Add this to __Blog Header__:  
-````html
-<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --font-primary: 'Mukta', sans-serif;
-    --font-secondary: 'Crimson Text', serif;
-  }
-</style>
-````
-## 🌓 Force Light/Dark Mode
-
-1. Go to __Code injection__.  
-2. Decide for `light` or `dark`.
-3. Add this to __Blog Header__:
-
-````html
-<script>localStorage.setItem('attila_theme', 'dark');</script>
-<style>.js-theme {display:none!important;}</style>
-````
-
 ## 💬 Setup [Disqus](https://disqus.com/)
 
 1. Go to __Code injection__.  
@@ -122,3 +81,5 @@ npm run compress
 ## ⚖️ Copyright & License
 
 Copyright (C) 2015-2021 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
+
+Copyright (C) 2021 u2i LLC - usage outside of RetroTool blog is restricted
