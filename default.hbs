@@ -93,6 +93,13 @@
 			<button class="search-wrapper-close" aria-label="{{t "Close"}}"></button>
 		</div>
 
+		<picture class="footer-image">
+			<source media="(max-width: 767px)" srcset="{{asset "images/footer_image_360.png"}}, {{asset "images/footer_image_360@2x.png"}} 2x" />
+			<source media="(max-width: 1023px)" srcset="{{asset "images/footer_image_768.png"}}, {{asset "images/footer_image_768@2x.png"}} 2x" />
+			<source media="(max-width: 1365px)" srcset="{{asset "images/footer_image_1024.png"}}, {{asset "images/footer_image_1024@2x.png"}} 2x" />
+			<source srcset="{{asset "images/footer_image_1366.png"}}, {{asset "images/footer_image_1366@2x.png"}} 2x" />
+			<img alt="" />
+		</picture>
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
 				{{#if @site.secondary_navigation}}

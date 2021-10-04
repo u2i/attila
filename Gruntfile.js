@@ -22,20 +22,36 @@ module.exports = function(grunt) {
     },
     copy: {
       dev: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
+        files: [
+          {
+            dest: 'assets/font/',
+            src: '*',
+            cwd: 'src/font/',
+            expand: true
+          },
+          {
+            dest: 'assets/images/',
+            src: '*',
+            cwd: 'src/images/',
+            expand: true
+          }
+        ]
       },
       dist: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
+        files: [
+          {
+            dest: 'assets/font/',
+            src: '*',
+            cwd: 'src/font/',
+            expand: true
+          },
+          {
+            dest: 'assets/images/',
+            src: '*',
+            cwd: 'src/images/',
+            expand: true
+          }
+        ]
       }
     },
     clean: {

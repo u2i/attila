@@ -7,9 +7,13 @@
 @import "fonts";
 @import "mixins";
 @import "highlight";
-$breakpoint-large: 960px;
-$breakpoint-medium: 640px;
-$breakpoint-small: 480px;
+$breakpoint-xxxlarge: 1920px;
+$breakpoint-xxlarge: 1600px;
+$breakpoint-xlarge: 1366px;
+$breakpoint-hd: 1280px;
+$breakpoint-large: 1024px;
+$breakpoint-medium: 768px;
+$breakpoint-small: 360px;
 $inner: calc(40rem + 8vw);
 /* ==========================================================================
    Basics
@@ -486,14 +490,14 @@ textarea {
 			figcaption {
 				padding-left: 3.75rem;
 				padding-right: 3.75rem;
-				@media only screen and (max-width: $breakpoint-medium) {
+				@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 					padding-left: 1.25rem;
 					padding-right: 1.25rem;
 				}
 
 				&:after {
 					margin-left: 3.75rem;
-					@media only screen and (max-width: $breakpoint-medium) {
+					@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 						margin-left: 1.25rem;
 					}
 				}
@@ -508,14 +512,14 @@ textarea {
 			figcaption {
 				padding-left: 5rem;
 				padding-right: 5rem;
-				@media only screen and (max-width: $breakpoint-medium) {
+				@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 					padding-left: 2.5rem;
 					padding-right: 2.5rem;
 				}
 
 				&:after {
 					margin-left: 5rem;
-					@media only screen and (max-width: $breakpoint-medium) {
+					@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 						margin-left: 2.5rem;
 					}
 				}
@@ -540,14 +544,14 @@ textarea {
 		figcaption {
 			padding-left: 3.75rem;
 			padding-right: 3.75rem;
-			@media only screen and (max-width: $breakpoint-medium) {
+			@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 				padding-left: 1.25rem;
 				padding-right: 1.25rem;
 			}
 
 			&:after {
 				margin-left: 3.75rem;
-				@media only screen and (max-width: $breakpoint-medium) {
+				@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 					margin-left: 1.25rem;
 				}
 			}
@@ -684,7 +688,7 @@ textarea {
 	.kg-bookmark-publisher {
 		color: var(--ghost-accent-color);
 	}
-	@media (max-width: $breakpoint-medium) {
+	@media (max-width: #{$breakpoint-medium - 1px}) {
 		.kg-bookmark-container {
 			flex-direction: column;
 		}
@@ -728,8 +732,8 @@ textarea {
 	position: relative;
 	overflow: hidden;
 	margin: 0;
-	border: 2px solid var(--color-background-contrast);
-	background: var(--color-background-contrast);
+	border: 2px solid var(--color-avatar-background);
+	background: var(--color-avatar-background);
 	box-sizing: border-box;
 
 	&:after,
@@ -766,31 +770,15 @@ textarea {
    ========================================================================== */
 .blog-header {
 	position: relative;
-	padding-top: 5.5rem;
+	padding-top: 7.5rem;
 	background-color: var(--color-background-brand);
 
-	@media screen and (min-width: 768px) {
-		padding-top: 6.5rem;
+	@media screen and (min-width: $breakpoint-medium) {
+		padding-top: 8.5rem;
 	}
 
-	@media screen and (min-width: 1366px) {
-		padding-top: 7rem;
-	}
-
-	@media screen and (min-width: 1920px) {
+	@media screen and (min-width: $breakpoint-xlarge) {
 		padding-top: 10rem;
-	}
-
-	&.has-cover {
-		padding-top: calc(15rem + 8vw);
-		color: white;
-		background: black;
-		overflow: hidden;
-		text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-
-		&:after {
-			display: none;
-		}
 	}
 
 	.blog-box {
@@ -798,19 +786,52 @@ textarea {
 		z-index: 10;
 		padding-bottom: calc(2.5rem + 2vw);
 		text-align: center;
-		border-bottom: 1px solid var(--color-background-contrast);
-	}
-
-	&.has-cover .blog-box {
-		border: none;
-		padding-bottom: calc(5rem + 4vw);
+		max-width: 480px;
+    margin: 0 auto;
 	}
 
 	.inner {
 		padding: 0 calc(50% - 167px);
 
-		@media screen and (min-width: 768px) {
-			padding: 0 5rem;
+		@media screen and (min-width: $breakpoint-medium) {
+			padding: 0 calc(50% - 285px);
+		}
+	}
+
+	&.has-cover {
+		background: linear-gradient(
+			var(--color-background-brand) 0%, 
+			var(--color-background-brand) 85%, 
+			var(--color-background-main) 85%, 
+			var(--color-background-main) 100%
+		);
+
+		@media screen and (min-width: $breakpoint-medium) {
+			background: linear-gradient(
+				var(--color-background-brand) 0%, 
+				var(--color-background-brand) 70%, 
+				var(--color-background-main) 70%, 
+				var(--color-background-main) 100%
+			);
+		}
+	
+		@media screen and (min-width: $breakpoint-xlarge) {
+			background: linear-gradient(
+				var(--color-background-brand) 0%, 
+				var(--color-background-brand) 70%, 
+				var(--color-background-main) 70%, 
+				var(--color-background-main) 100%
+			);
+		}
+
+		.blog-box {
+			padding-bottom: calc(1.5rem + 2vw);
+		}
+
+		.hero img {
+			width: 100%;
+			margin: 0 auto;
+			display: block;
 		}
 	}
 }
@@ -835,8 +856,8 @@ textarea {
 		left: 0;
 		bottom: 0;
 		z-index: 8;
-		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 35%, rgba(0, 0, 0, 0.33) 50%, rgba(0, 0, 0, 0.4) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 35%, rgba(0, 0, 0, 0.33) 50%, rgba(0, 0, 0, 0.4) 100%);
 	}
 
 	img {
@@ -859,20 +880,12 @@ textarea {
 	color: var(--color-content-lead);
 }
 
-.has-cover .blog-name {
-	color: white;
-}
-
 .blog-description {
-	@include font('H8');
+	@include font('H9');
 	display: block;
-	margin-top: 0.625rem;
+	margin-top: 2em;
 	padding: 0;
-	color: var(--color-content-secondary);
-}
-
-.has-cover .blog-description {
-	color: white;
+	color: var(--color-content-lead);
 }
 
 .archive {
@@ -950,7 +963,7 @@ textarea {
 
 	&.archive-author {
 		padding-left: 10rem;
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			padding-left: 0;
 			padding-right: 6.25rem;
 		}
@@ -963,7 +976,7 @@ textarea {
 			height: 6.25rem;
 			border-radius: 5rem;
 			overflow: hidden;
-			@media only screen and (max-width: $breakpoint-medium) {
+			@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 				left: auto;
 				right: 0;
 				top: 1.25rem;
@@ -1021,10 +1034,7 @@ textarea {
 .inner {
 	max-width: $inner;
 	margin: 0 auto;
-	padding: 0 5rem;
-	@media only screen and (max-width: $breakpoint-medium) {
-		padding: 0 2.5rem;
-	}
+	padding: 0 2.5rem;
 }
 
 /* ==========================================================================
@@ -1106,7 +1116,7 @@ textarea {
 	border-radius: 4px;
 	box-shadow: 0 8px 24px -2px rgba(0,0,0,0.4);
 	overflow: hidden;
-	@media only screen and (max-width: $breakpoint-large) {
+	@media only screen and (max-width: #{$breakpoint-large - 1px}) {
 		top: 3.75rem;
 	}
 }
@@ -1192,7 +1202,7 @@ textarea {
 	max-height: 50vh;
 	-webkit-overflow-scrolling: touch;
 
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		max-height: 75vh;
 	}
 
@@ -1268,34 +1278,35 @@ textarea {
 	padding: 0;
 
 	.nav-wrapper-control {
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: #{$breakpoint-large - 1px}) {
+			width: calc(100% - 2.5rem);
 			padding: 1rem 1.25rem;
 		}
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $breakpoint-medium) {
 		height: 3.5rem;
 		display: flex;
 		align-items: center;
-		padding: 1rem calc(50% - 306px);
-		width: 612px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
-	@media screen and (min-width: 1280px) {
+	@media screen and (min-width: $breakpoint-hd) {	
 		height: 4.125rem;
 	}
 
-	@media screen and (min-width: 1600px) {
+	@media screen and (min-width: $breakpoint-xxlarge) {
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 	}
 
-	@media screen and (min-width: 1920px) {
+	@media screen and (min-width: $breakpoint-xxxlarge) {
 		padding-top: 2.4rem;
 		padding-bottom: 2.4rem;
 	}
 
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		transform: translate3d(0,-100%,0);
 	}
 }
@@ -1316,7 +1327,7 @@ textarea {
 }
 
 .menu-active .nav-close {
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		display: block;
 	}
 }
@@ -1337,7 +1348,7 @@ textarea {
 	align-items: center;
 	justify-content: space-between;
 
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		display: flex;
 	}
 
@@ -1399,19 +1410,19 @@ textarea {
 	display: flex;
 	max-height: calc(100vh - 3.75rem);
 	overflow-y: auto;
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		background: var(--color-background-brand);
 		flex-direction: column;
 		padding: 0 1.25rem;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $breakpoint-medium) {
 		width: 100%;
 	}
 }
 
 .nav-header .nav-wrapper .logo {
 	margin-left: 0.75em;
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		display: none;
 	}
 
@@ -1437,21 +1448,23 @@ textarea {
 	padding: 0;
 	list-style: none;
 
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		flex-direction: column;
 		flex-shrink: 0;
 		padding: 1.25rem 0 0;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $breakpoint-medium) {
 		align-items: center;
 	}
 
 	&.nav-meta {
 		width: auto;
 		justify-content: flex-end;
+		align-items: flex-end;
+		padding-bottom: 4px;
 
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			width: 100%;
 			flex-direction: row !important;
 			padding: 0;
@@ -1463,12 +1476,12 @@ textarea {
 	position: relative;
 	margin-bottom: 0.5rem;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $breakpoint-medium) {
 		margin-right: 2rem;
 		margin-bottom: 0;
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: $breakpoint-large) {
 		margin-right: 2rem;
 	}
 
@@ -1502,7 +1515,7 @@ textarea {
 				border-color: var(--ghost-accent-color);
 			}
 
-			@media only screen and (max-width: $breakpoint-medium) {
+			@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 				border-color: #3B3D40;
 
 				&:focus,
@@ -1528,7 +1541,7 @@ textarea {
 		cursor: pointer;
 		transition: color linear 0.1s;
 
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			padding-left: 2.5rem;
 
 			&:before {
@@ -1549,7 +1562,7 @@ textarea {
 		&:hover {
 			color: var(--color-content-main);
 
-			@media only screen and (max-width: $breakpoint-medium) {
+			@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 				color: #C4C7CC;
 			}
 		}
@@ -1564,13 +1577,13 @@ textarea {
 
 	li {
 		margin-right: 0.625rem;
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			flex-grow: 1;
 		}
 
 		&.nav-twitter,
 		&.nav-facebook {
-			@media only screen and (max-width: $breakpoint-medium) {
+			@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 				display: none;
 			}
 		}
@@ -1588,7 +1601,7 @@ textarea {
 		li.nav-search {
 			display: block !important;
 
-			@media only screen and (max-width: $breakpoint-medium) {
+			@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 				display: none !important;
 			}
 		}
@@ -1682,25 +1695,31 @@ textarea {
 /* ==========================================================================
    Footer
    ========================================================================== */
+.footer-image {
+	margin: 1.875rem auto -1px;
+
+	@media screen and (min-width: $breakpoint-medium) {
+		margin-top: 5rem;
+	}
+
+	img {
+		display: block;
+	}
+}
+
 .nav-footer {
 	position: relative;
 	z-index: 20;
-	margin-top: 1.875rem;
 	background-color: var(--color-content-main);
-	padding: 3.5rem 1.25rem;
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
 
-	@media screen and (min-width: 768px) {
-		padding-left: calc(50% - 306px);
-		padding-right: calc(50% - 306px);
-		width: 612px;
-	}
-
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: $breakpoint-large) {
 		padding-top: 5rem;
 		padding-bottom: 5rem;
 	}
 
-	@media screen and (min-width: 1366px) {
+	@media screen and (min-width: $breakpoint-xlarge) {
 		padding-top: 7rem;
 		padding-bottom: 6rem;
 	}
@@ -1779,7 +1798,7 @@ textarea {
 	.nav-rss {
 		margin: 0 1.875rem;
 
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			margin: 0 0 0 0.625rem;
 		}
 	}
@@ -1792,7 +1811,7 @@ textarea {
 			height: 1.25rem;
 			filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 
-			@media screen and (min-width: 1024px) {
+			@media screen and (min-width: $breakpoint-large) {
 				height: 2rem;
 			}
 		}
@@ -1808,7 +1827,7 @@ textarea {
 	color: var(--color-content-secondary);
 	display: none;
 
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		margin-right: auto;
 	}
 
@@ -1873,21 +1892,42 @@ textarea {
 // 	}
 // }
 
+.nav-footer, .post-header {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	width: calc(100% - 2.5rem);
+}
 
-.nav-header, .nav-footer {
-	@media screen and (min-width: 1024px) {
+.container .inner {
+	@media screen and (min-width: $breakpoint-medium) {
+		margin-left: calc(50% - (40rem + 8vw) / 2);
+		margin-right: calc(50% - (40rem + 8vw) / 2);
+		padding-left: 0;
+		padding-right: 0;
+		width: calc(40rem + 8vw);
+	}
+}
+
+.nav-header, .nav-footer, .post-header {
+	@media screen and (min-width: $breakpoint-medium) {
+		padding-left: calc(50% - 306px);
+		padding-right: calc(50% - 306px);
+		width: 612px;
+	}
+
+	@media screen and (min-width: $breakpoint-large) {
 		padding-left: calc(50% - 452px);
 		padding-right: calc(50% - 452px);
 		width: 904px;
 	}
 
-	@media screen and (min-width: 1366px) {
+	@media screen and (min-width: $breakpoint-xlarge) {
 		padding-left: calc(50% - 583px);
 		padding-right: calc(50% - 583px);
 		width: 1166px;
 	}
 
-	@media screen and (min-width: 1600px) {
+	@media screen and (min-width: $breakpoint-xxlarge) {
 		padding-left: calc(50% - 583px);
 		padding-right: calc(50% - 583px);
 	}
@@ -1899,14 +1939,39 @@ textarea {
 .container {
 	position: relative;
 
-	.post .post-box {
+	.loop .inner {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		border-bottom: 1px solid var(--color-content-secondary);
 		padding-top: calc(2.5rem + 2vw);
 		padding-bottom: calc(2.5rem + 2vw);
-		border-bottom: 1px solid var(--color-background-contrast);
+
+		@media screen and (min-width: $breakpoint-medium) {
+			flex-direction: row;
+		}
+
+		.loop-image {
+			width: 280px;
+			max-height: 280px;
+			max-width: 280px;
+			margin: 0 auto 2em;
+
+			@media screen and (min-width: $breakpoint-medium) {
+				width: 178px;
+				max-height: 178px;
+				max-width: 178px;
+				margin: 0 2em 0 0;
+			}
+		}
+	}
+
+	.post .post-box {
+		border-bottom: 1px solid var(---color-content-secondary);
 	}
 
 	#results .post:first-child .post-box {
-		border-top: 1px solid var(--color-background-contrast);
+		border-top: 1px solid var(--color-content-secondary);
 	}
 }
 
@@ -1929,16 +1994,23 @@ textarea {
    ========================================================================== */
 .post-header {
 	position: relative;
-	padding: calc(7.5rem + 3vw) 0 calc(1.25rem + 1vw);
+	padding-top: calc(7.5rem + 3vw);
+	padding-bottom: calc(1.25rem + 1vw);
 	margin-bottom: calc(2.5rem + 2vw);
 	background-color: var(--color-background-brand);
 }
 
 .post-header.has-cover {
-	padding: calc(10rem + 8vw) 0 calc(2.5rem + 6vw);
+	padding-top: calc(5rem + 8vw);
+	padding-bottom: calc(1rem + 4vw);
 	background: black;
 	overflow: hidden;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+	@media screen and (min-width: $breakpoint-large) {
+		padding-top: calc(10rem + 8vw);
+		padding-bottom: calc(2.5rem + 6vw);
+	}
 }
 
 .post-cover {
@@ -1967,12 +2039,16 @@ textarea {
 		content: '';
 		position: absolute;
 		width: 100%;
-		height: 66.666%;
+		height: 100%;
 		left: 0;
 		bottom: 0;
 		z-index: 8;
-		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
+		background: rgba(0, 0, 0, 0.333);
+
+		@media screen and (min-width: $breakpoint-large) {
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 35%, rgba(0, 0, 0, 0.33) 50%, rgba(0, 0, 0, 0.4) 100%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 35%, rgba(0, 0, 0, 0.33) 50%, rgba(0, 0, 0, 0.4) 100%);	
+		}
 	}
 }
 
@@ -1982,12 +2058,12 @@ textarea {
 }
 
 .post-info {
+	@include font('H8', $line-height: 1);
 	position: relative;
 	z-index: 10;
 	display: flex;
 	margin-bottom: 1.25rem;
-	font-size: 2em;
-	line-height: 1em;
+	align-items: center;
 
 	.post-type {
 		color: var(--ghost-accent-color);
@@ -1995,7 +2071,7 @@ textarea {
 
 	.post-count {
 		position: relative;
-		margin-left: 3.5rem;
+		margin-left: 2em;
 		color: var(--color-content-secondary);
 
 		&:after {
@@ -2031,7 +2107,7 @@ textarea {
 	margin: 0 0 1.25rem;
 	color: var(--color-content-lead);
 
-	@media only screen and (max-width: $breakpoint-small) {
+	@media only screen and (max-width: #{$breakpoint-small - 1px}) {
 		-webkit-hyphens: auto;
 		hyphens: auto;
 	}
@@ -2046,6 +2122,11 @@ textarea {
 .post-header .post-title {
 	@include font('H1');
 	margin: 0 0 2.5rem;
+	width: 60%;
+
+	@media screen and (min-width: $breakpoint-large) {
+		width: 100%;
+	}
 }
 
 .has-cover .post-title {
@@ -2053,10 +2134,13 @@ textarea {
 }
 
 .post-meta {
+	@include font('H9', $line-height: 1.5em);
 	font-weight: 400;
-	font-size: 1em;
-	line-height: 1.25rem;
 	color: var(--color-content-secondary);
+
+	&.loop {
+		@include font('H10', $line-height: 1.5em);
+	}
 
 	a {
 		display: inline-block;
@@ -2074,6 +2158,8 @@ textarea {
 	position: relative;
 	padding-bottom: 2.5rem;
 	z-index: 10;
+	display: flex;
+	align-items: center;
 
 	&:after {
 		clear: both;
@@ -2092,14 +2178,8 @@ textarea {
 	}
 
 	.post-meta-avatars {
-		float: left;
 		margin-right: 0.625rem;
-
-		&:after {
-			clear: both;
-			content: '';
-			display: table;
-		}
+		flex-shrink: 1;
 
 		.post-meta-avatar {
 			float: left;
@@ -2148,7 +2228,7 @@ textarea {
 }
 
 .post-content {
-	@include font('H10');
+	@include font('H9');
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -2192,7 +2272,7 @@ textarea {
 	max-width: 33.33333%;
 	float: right;
 	display: flex;
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		max-width: none;
 		float: none;
 		margin-bottom: 1.25rem;
@@ -2212,7 +2292,7 @@ textarea {
 	color: white;
 	border-radius: 2em;
 	transition: all ease 0.2s;
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		margin-left: 0;
 		margin-right: 0.66667em;
 	}
@@ -2258,7 +2338,7 @@ textarea {
 	float: left;
 	display: flex;
 	flex-wrap: wrap;
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		max-width: none;
 		float: none;
 		margin-bottom: 1.25rem;
@@ -2360,8 +2440,8 @@ textarea {
 .post-nav {
 	position: relative;
 	margin-top: -1px;
-	border-top: 1px solid var(--color-background-contrast);
-	border-bottom: 1px solid var(--color-background-contrast);
+	border-top: 1px solid var(--color-content-secondary);
+	border-bottom: 1px solid var(--color-content-secondary);
 }
 
 .post-nav:after {
@@ -2371,10 +2451,10 @@ textarea {
 	height: 100%;
 	left: 50%;
 	top: 0;
-	background: var(--color-background-contrast);
+	background: var(--color-content-secondary);
 	z-index: 2;
 
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		display: none;
 	}
 }
@@ -2385,7 +2465,7 @@ textarea {
 	color: inherit;
 	display: block;
 	width: 50%;
-	@media only screen and (max-width: $breakpoint-medium) {
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		display: block;
 		width: 100%;
 	}
@@ -2405,7 +2485,7 @@ textarea {
 
 	.post-nav-teaser {
 		padding-right: 1.875rem;
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			padding-right: 0;
 		}
 	}
@@ -2416,7 +2496,7 @@ textarea {
 
 	.post-nav-teaser {
 		padding-left: 1.875rem;
-		@media only screen and (max-width: $breakpoint-medium) {
+		@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 			padding-left: 0;
 		}
 	}
@@ -2424,11 +2504,14 @@ textarea {
 
 .post-nav-teaser {
 	position: relative;
-	padding: 1.25rem 0;
+	padding: 2.5rem 0;
 	min-height: 5rem;
-	@media only screen and (max-width: $breakpoint-medium) {
+	margin: 0 1.5rem;
+
+	@media only screen and (max-width: #{$breakpoint-medium - 1px}) {
 		min-height: 2.5em;
 		padding: 2em 0;
+		margin: 0;
 
 		&:after {
 			position: absolute;
@@ -2438,7 +2521,7 @@ textarea {
 			left: 0;
 			bottom: 0;
 			margin-bottom: -1px;
-			background: var(--color-background-contrast);
+			background: var(--color-content-secondary);
 			z-index: 2;
 		}
 	}
@@ -2474,7 +2557,7 @@ textarea {
 
 .post-nav-title {
 	@include font('H4');
-	margin: 0 0 0.3125rem;
+	margin: 0 0 0.5em;
 	padding: 0;
 	color: inherit;
 	display: -webkit-box;
@@ -2487,8 +2570,7 @@ textarea {
 
 .post-nav-excerpt {
 	@include font('H10');
-	height: 2.75rem;
-	margin: 0 0 0.625rem;
+	margin: 0 0 1.5em;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -2559,7 +2641,7 @@ textarea {
 	position: relative;
 	top: -1px;
 	display: inline-block;
-	@media only screen and (max-width: $breakpoint-small) {
+	@media only screen and (max-width: #{$breakpoint-small - 1px}) {
 		display: none;
 	}
 }
