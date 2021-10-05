@@ -1952,18 +1952,20 @@ textarea {
 		}
 
 		.loop-image {
-			width: 280px;
-			max-height: 280px;
-			max-width: 280px;
-			min-width: 280px;
-			margin: 0 auto 2em;
+			img {
+				width: 280px;
+				max-height: 280px;
+				max-width: 280px;
+				min-width: 280px;
+				margin: 0 auto 2em;
 
-			@media screen and (min-width: $breakpoint-medium) {
-				width: 178px;
-				max-height: 178px;
-				max-width: 178px;
-				min-width: 178px;
-				margin: 0 2em 0 0;
+				@media screen and (min-width: $breakpoint-medium) {
+					width: 178px;
+					max-height: 178px;
+					max-width: 178px;
+					min-width: 178px;
+					margin: 0 2em 0 0;
+				}
 			}
 		}
 	}
@@ -2118,6 +2120,10 @@ textarea {
 		text-decoration: none;
 		color: inherit;
 		font-weight: inherit;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -2227,6 +2233,16 @@ textarea {
 .post-excerpt {
 	@include font('H9');
 	margin: 1em 0 0;
+
+	a {
+		display: block;
+		color: var(--ghost-accent-color);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--color-content-main);
+		}
+	}
 }
 
 .post-content {
