@@ -829,9 +829,15 @@ textarea {
 		}
 
 		.hero img {
-			width: 100%;
+			width: 334px;
+			height: 222px;
 			margin: 0 auto;
 			display: block;
+
+			@media screen and (min-width: $breakpoint-medium) {
+				width: 570px;
+				height: 378px;
+			}
 		}
 	}
 }
@@ -1696,10 +1702,24 @@ textarea {
    Footer
    ========================================================================== */
 .footer-image {
+	width: 336px;
+	height: 95px;
 	margin: 1.875rem auto -1px;
 
 	@media screen and (min-width: $breakpoint-medium) {
+		width: 748px;
+		height: 130px;
 		margin-top: 5rem;
+	}
+
+	@media screen and (min-width: $breakpoint-large) {
+		width: 970px;
+		height: 143px;
+	}
+
+	@media screen and (min-width: $breakpoint-xlarge) {
+		width: 1167px;
+		height: 172px;
 	}
 
 	img {
