@@ -9,8 +9,9 @@
 		</div>
 		{{#if @site.cover_image}}
 		<picture class="hero">
-			<source media="(max-width: 767px)" srcset="{{asset "images/hero_360.png"}}, {{asset "images/hero_360@2x.png"}} 2x" />
-			<source srcset="{{asset "images/hero_768.png"}}, {{asset "images/hero_768@2x.png"}} 2x" />
+			<source media="(max-width: 1023px)" srcset="{{asset "images/hero_360.png"}}, {{asset "images/hero_360@2x.png"}} 2x" />
+			<source media="(max-width: 1365px)" srcset="{{asset "images/hero_1024.png"}}, {{asset "images/hero_1024@2x.png"}} 2x" />
+			<source srcset="{{asset "images/hero_1366.png"}}, {{asset "images/hero_1366@2x.png"}} 2x" />
 			<img alt="" />
 		</picture>
 		{{/if}}

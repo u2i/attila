@@ -774,11 +774,11 @@ textarea {
 	background-color: var(--color-background-brand);
 
 	@media screen and (min-width: $breakpoint-medium) {
-		padding-top: 8.5rem;
+		padding-top: 5.5rem;
 	}
 
 	@media screen and (min-width: $breakpoint-xlarge) {
-		padding-top: 10rem;
+		padding-top: 7rem;
 	}
 
 	.blog-box {
@@ -786,8 +786,19 @@ textarea {
 		z-index: 10;
 		padding-bottom: calc(2.5rem + 2vw);
 		text-align: center;
-		max-width: 480px;
-    margin: 0 auto;
+
+		.blog-name {
+			margin: 0 auto;
+
+			@media screen and (min-width: $breakpoint-medium) {
+				max-width: 430px;
+			}
+	
+			@media screen and (min-width: $breakpoint-large) {
+				margin: 0;
+				max-width: 480px;
+			}
+		}
 	}
 
 	.inner {
@@ -795,6 +806,19 @@ textarea {
 
 		@media screen and (min-width: $breakpoint-medium) {
 			padding: 0 calc(50% - 285px);
+		}
+
+		@media screen and (min-width: $breakpoint-large) {
+			padding-bottom: 2rem;
+			max-width: none;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 0;
+		}
+
+		@media screen and (min-width: $breakpoint-xlarge) {
+			padding-bottom: 3rem;
 		}
 	}
 
@@ -804,23 +828,27 @@ textarea {
 		@media screen and (min-width: $breakpoint-medium) {
 			background: linear-gradient(
 				var(--color-background-brand) 0%, 
-				var(--color-background-brand) 70%, 
-				var(--color-background-main) 70%, 
+				var(--color-background-brand) 75%, 
+				var(--color-background-main) 75%, 
 				var(--color-background-main) 100%
 			);
 		}
 	
-		@media screen and (min-width: $breakpoint-xlarge) {
-			background: linear-gradient(
-				var(--color-background-brand) 0%, 
-				var(--color-background-brand) 70%, 
-				var(--color-background-main) 70%, 
-				var(--color-background-main) 100%
-			);
+		@media screen and (min-width: $breakpoint-large) {
+			background: var(--color-background-brand);
 		}
 
 		.blog-box {
 			padding-bottom: calc(1.5rem + 2vw);
+
+			@media screen and (min-width: $breakpoint-large) {
+				margin-right: 4em;
+				padding: 0;
+
+				.blog-name, .blog-description {
+					text-align: left;
+				}
+			}
 		}
 
 		.hero img {
@@ -828,9 +856,19 @@ textarea {
 			display: none;
 
 			@media screen and (min-width: $breakpoint-medium) {
-				width: 570px;
-				height: 378px;
+				width: 334px;
+				height: 222px;
 				display: block;
+			}
+
+			@media screen and (min-width: $breakpoint-large) {
+				width: 440px;
+				height: 292px;
+			}
+
+			@media screen and (min-width: $breakpoint-xlarge) {
+				width: 495px;
+				height: 328px;
 			}
 		}
 	}
@@ -1928,7 +1966,9 @@ textarea {
 		padding-right: calc(50% - 306px);
 		width: 612px;
 	}
+}
 
+.nav-header, .nav-footer, .post-header, .blog-header .inner {
 	@media screen and (min-width: $breakpoint-large) {
 		padding-left: calc(50% - 452px);
 		padding-right: calc(50% - 452px);
@@ -1939,11 +1979,6 @@ textarea {
 		padding-left: calc(50% - 583px);
 		padding-right: calc(50% - 583px);
 		width: 1166px;
-	}
-
-	@media screen and (min-width: $breakpoint-xxlarge) {
-		padding-left: calc(50% - 583px);
-		padding-right: calc(50% - 583px);
 	}
 }
 
@@ -1971,7 +2006,7 @@ textarea {
 				max-height: 122px;
 				max-width: 280px;
 				min-width: 280px;
-				margin: 0 auto 2em;
+				margin: 0 auto 1em;
 
 				@media screen and (min-width: $breakpoint-medium) {
 					width: 178px;
