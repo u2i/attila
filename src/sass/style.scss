@@ -2162,6 +2162,12 @@ textarea {
 
 	&.loop {
 		@include font('H10', $line-height: 1.5em);
+
+		@media screen and (min-width: $breakpoint-medium) {
+			> div {
+				display: inline-block;
+			}
+		}
 	}
 
 	a {

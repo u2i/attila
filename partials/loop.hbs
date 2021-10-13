@@ -20,13 +20,17 @@
 		{{/if}}
 		<div class="box post-box">
 			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-			<span class="post-meta loop">
-				{{t "By"}}
-				{{authors separator=", "}}
-				{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
-				{{t "on"}}
-				<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
-			</span>
+			<div class="post-meta loop">
+				<div>
+					{{t "By"}}
+					{{authors separator=", "}}
+					{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+				</div>
+				<div>
+					{{t "on"}}
+					<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time> &bull; {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+				</div>
+			</div>
 			<p class="post-excerpt">
 				{{excerpt words="30"}}
 				<a href="{{url}}">…</a>
