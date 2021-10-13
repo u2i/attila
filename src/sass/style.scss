@@ -799,12 +799,7 @@ textarea {
 	}
 
 	&.has-cover {
-		background: linear-gradient(
-			var(--color-background-brand) 0%, 
-			var(--color-background-brand) 85%, 
-			var(--color-background-main) 85%, 
-			var(--color-background-main) 100%
-		);
+		background: var(--color-background-brand);
 
 		@media screen and (min-width: $breakpoint-medium) {
 			background: linear-gradient(
@@ -829,14 +824,13 @@ textarea {
 		}
 
 		.hero img {
-			width: 334px;
-			height: 222px;
 			margin: 0 auto;
-			display: block;
+			display: none;
 
 			@media screen and (min-width: $breakpoint-medium) {
 				width: 570px;
 				height: 378px;
+				display: block;
 			}
 		}
 	}
