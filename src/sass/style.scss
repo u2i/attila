@@ -1067,6 +1067,10 @@ textarea {
 	min-height: 100vh;
 	position: relative;
 	padding-right: 0;
+
+	.content {
+		flex-grow: 1;
+	}
 }
 
 .inner {
